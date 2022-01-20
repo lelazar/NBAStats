@@ -47,19 +47,67 @@ import java.util.Scanner;
 public class
 Main
 {
-    private static int _3P, _3PA, _3PAOpp, AST, BLK, DRB, FGA, FGAOpp, FG, FGTm, FTA, FT, ORB, PTS, PF, STL, TO, TRB, TRBOpp, TRBTm;
-    private static float MP, MPTm;
+    private static boolean isExit = false;
     private static Scanner scanner = new Scanner(System.in);
 
     public static void
     main(String[] args)
     {
-        // printBLKPercentage();
-        // printTRBPercentage();
+        mainScreen();
 
-        // AssistPercentage.printASTPercentage();
-        // BlockPercentage.printBLKPercentage();
-        TotalReboundPercentage.printTRBPercentage();
+        while(!isExit) {
+            System.out.print("Your option: ");
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1:
+                    AssistPercentage.printASTPercentage();
+                    exitMessage();
+                    break;
+                case 2:
+                    BlockPercentage.printBLKPercentage();
+                    exitMessage();
+                    break;
+                case 3:
+                    TotalReboundPercentage.printTRBPercentage();
+                    exitMessage();
+                    break;
+                default:
+                    assert false : "Invalid option chosen!";
+            }
+        }
+    }
+
+    public static void
+    mainScreen()
+    {
+        System.out.println("==================================================");
+        System.out.println("Welcome to the NBA Advanced Statistics Calculator!");
+        System.out.println("Please choose one from the below options.");
+        System.out.println("1. Assist Percentage");
+        System.out.println("2. Block Percentage");
+        System.out.println("3. Total Rebound Percentage");
+        System.out.println("==================================================");
+    }
+
+    public static void
+    exitMessage()
+    {
+        System.out.println("Would you like to check another statistic record (1) or exit the application (2)?");
+        System.out.print("Your choice: ");
+        int exitChoice = scanner.nextInt();
+        switch (exitChoice)
+        {
+            case 1:
+                isExit = false;
+                mainScreen();
+                break;
+            case 2:
+                isExit = true;
+                break;
+            default:
+                isExit = true;
+                assert false : "Invalid option chosen!";
+        }
     }
 }
 
