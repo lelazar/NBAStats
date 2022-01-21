@@ -4,18 +4,12 @@ import java.util.Scanner;
 
 public class AssistPercentage
 {
-    private AssistPercentage assistPercentage;
     private static Scanner scanner = new Scanner(System.in);
     private static int AST;
     private static float MP;
     private static float MPTm;
     private static int FGTm;
     private static int FG;
-
-    public AssistPercentage(AssistPercentage assistPercentage)
-    {
-        this.assistPercentage = assistPercentage;
-    }
 
     public static float
     ASTPercentage(int AST, float MP, float MPTm, int FGTm, int FG)

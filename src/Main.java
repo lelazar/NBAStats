@@ -38,9 +38,8 @@
 * Usage Percentage (Usg%): 100 * ((FGA + 0.44 * FTA + TO) * (Tm MP / 5)) / (MP * (Tm FGA + 0.44 * Tm FTA + Tm TO))
  *************************************************************************************************************************************** */
 
-import statistics.AssistPercentage;
-import statistics.BlockPercentage;
-import statistics.TotalReboundPercentage;
+import GUI.Launcher;
+import statistics.*;
 
 import java.util.Scanner;
 
@@ -53,12 +52,16 @@ Main
     public static void
     main(String[] args)
     {
+        new Launcher(0);
         mainScreen();
 
         while(!isExit) {
             System.out.print("Your option: ");
             int choice = scanner.nextInt();
             switch (choice) {
+                case 0:
+                    isExit = true;
+                    break;
                 case 1:
                     AssistPercentage.printASTPercentage();
                     exitMessage();
@@ -69,6 +72,18 @@ Main
                     break;
                 case 3:
                     TotalReboundPercentage.printTRBPercentage();
+                    exitMessage();
+                    break;
+                case 4:
+                    DReboundPercentage.printDRBPercentage();
+                    exitMessage();
+                    break;
+                case 5:
+                    OReboundPercentage.printORBPercentage();
+                    exitMessage();
+                    break;
+                case 6:
+                    EffectiveFGPercentage.printEFGPercentage();
                     exitMessage();
                     break;
                 default:
@@ -83,16 +98,20 @@ Main
         System.out.println("==================================================");
         System.out.println("Welcome to the NBA Advanced Statistics Calculator!");
         System.out.println("Please choose one from the below options.");
+        System.out.println("0. Exit Application");
         System.out.println("1. Assist Percentage");
         System.out.println("2. Block Percentage");
         System.out.println("3. Total Rebound Percentage");
+        System.out.println("4. Defensive Rebound Percentage");
+        System.out.println("5. Offensive Rebound Percentage");
+        System.out.println("6. Player's Effective Field Goal %");
         System.out.println("==================================================");
     }
 
     public static void
     exitMessage()
     {
-        System.out.println("Would you like to check another statistic record (1) or exit the application (2)?");
+        System.out.println("Would you like to check another statistic record (press 1) or exit the application (press 2)?");
         System.out.print("Your choice: ");
         int exitChoice = scanner.nextInt();
         switch (exitChoice)

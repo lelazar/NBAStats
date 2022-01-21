@@ -5,18 +5,12 @@ import java.util.Scanner;
 public class
 TotalReboundPercentage
 {
-    private TotalReboundPercentage totalReboundPercentage;
     private static Scanner scanner = new Scanner(System.in);
     private static int TRB;
     private static float MPTm;
     private static float MP;
     private static int TRBTm;
     private static int TRBOpp;
-
-    public TotalReboundPercentage(TotalReboundPercentage totalReboundPercentage)
-    {
-        this.totalReboundPercentage = totalReboundPercentage;
-    }
 
     public static float
     TRBPercentage(int TRB, float MPTm, float MP, int TRBTm, int TRBOpp)

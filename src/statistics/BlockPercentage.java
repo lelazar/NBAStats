@@ -5,18 +5,12 @@ import java.util.Scanner;
 public class
 BlockPercentage
 {
-    private BlockPercentage blockPercentage;
     private static Scanner scanner = new Scanner(System.in);
     private static int BLK;
     private static float MPTm;
     private static float MP;
     private static int FGAOpp;
     private static int _3PAOpp;
-
-    public BlockPercentage(BlockPercentage blockPercentage)
-    {
-        this.blockPercentage = blockPercentage;
-    }
 
     public static float
     BLKPercentage(int BLK, float MPTm, float MP, int FGAOpp, int _3PAOpp)
